@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo sé que estoy en la iglesia verdadera</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+    <style>
+    body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Monaco', monospace;
+            font-size: 14px;
+        }
+
+        #terminal {
+            width: 80%;
+            height: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        .command {
+            color: #0f0;
+        }
+
+        .output {
+            color: #fff;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div id="content"></div>
+    </div>
+    <script>
+        const content = document.getElementById('content');
+        
+const verses = [
+    {text: '<span class="title">LO QUE TODA IGLESIA CRISTIANA DEBE DE CREER</span>', delay: 100},
+    {text: '<span class="command">En el llamamiento directo del creyente para dedicarse por entero a la causa de D-s</span>, Mt. 19:21; Luc. 9:59-62; 14:26-27.', delay: 50},
+    {text: '<span class="command">En la renunciación completa a los bienes materiales para servir al Sür</span>, 1Rey. 19:20-21; Mt. 4:18-22; Lc. 14:33; Hech. 4:34-35.', delay: 50},
+    {text: '<span class="command">En el bautismo por inmersión, como primer paso para la salvación</span>, Mt. 3:5-6,16; 28:19; Mr. 16:16.', delay: 50},
+    {text: '<span class="command">En la observancia de los mandamientos de D-s, de J-s el Hijo, y del E S</span>, Mt. 5:18-19; 28:20; Mt. 19:16,20; Gál. 3:21; Ex. 20:1-17.', delay: 50},
+    {text: '<span class="command">Que el santo Sábado, séptimo día, es el día de reposo, bendecido por D-s</span>, Gén. 2:3; Mr. 2:27-28; Heb. 4:4,9; Ex. 20:10.', delay: 50},
+    {text: '<span class="command">En la resurrección de los muertos cuando C-to aparezca en gloria</span>, Mr. 12:24-25; Dan. 12:2; Jn. 11:24-25.', delay: 50},
+    {text: '<span class="command">Que los ministros deben practicar la vida por fe</span>, Jn. 6:27; Heb. 10:38, 39; Rom. 1:17.', delay: 50},
+    {text: '<span class="command">En la Trinidad, D-s el Padre, D-s el Hijo, y D-s el E S, iguales en divina perfección</span>, Mt. 28:19; Hech. 5:3; 2Cor. 13:13; 1Jn. 5:7.', delay: 50},
+    {text: '<span class="command">Que C-to es el Salvador del hombre, y por ningún otro medio hay vida</span>, Jn. 10:28-29; Hech. 4:12, 20, 28; 1Tim 2:5.', delay: 50},
+    {text: '<span class="command">Que somos salvados por gracia y por la fe</span>, Hech. 15:11; Rom. 4:16; Ef. 2:5, 8.', delay: 50},
+    {text: '<span class="command">Que el ayuno y la oración son factores para fortalecer al creyente</span>, Esther 4:16; Jonas 3:7-8; Mt. 9:15; 17:21.', delay: 50},
+    {text: '<span class="command">En la santidad, que es libertad del pecado</span>. Los ministros de C-to tienen que practicarla, según mandato del Apóstol Pablo, Lc. 1:75; Rom. 6:19, 22; 12:1; Ef. 4:24; 1Tes. 3:13; Apo. 22:11.', delay: 50},
+    {text: '<span class="command">En la segunda venida de C-to, que será personal, que descenderá en las nubes de gloria y que nadie sabe el día ni la hora</span>, Mt. 25:31; 1Tes. 4:16-17; 2Ped. 3:10.', delay: 50},
+    {text: '<span class="command">En la sanidad divina, por medio de la oración y la unción</span>, Mr. 6:13; Mt. 10:8; Stgo. 5:14-15.', delay: 50},
+    
+    {text: '<span class="command">Que el ministro no debe mezclarse en política</span>, 2Tim. 2:14; 1Ped. 4:15; Jn. 18:36.', delay: 50},
+    {text: '<span class="command">En el mensaje universal, proclamado por la iglesia del Sür</span>, Mr. 16:15; Mt. 14:14; 10:7.', delay: 50},
+    {text: '<span class="command">Que todos los hombres son iguales, con las mismas responsabilidades y los mismos privilegios ante D-s</span>, Gál. 3:28; Hech. 2:39; 10:34-35; 17:26.', delay: 50},
+    {text: '<span class="command">En el bautismo del E S y fuego</span>, Mt. 3:11; Lc. 11:13; Hech. 2:38.', delay: 50},
+    {text: '<span class="command">En la profecía y la revelación divina, por medio de sueños o visiones y manifestaciones del E S</span>, Num. 12:6; Job 33:14-15; Joel 2:28; Mt. 2:12; Hech. 8:26; 10:3; 16:9; 2Ped. 1:21.', delay: 50},
+    {text: '<span class="command">En la gloria o vida eterna para los fieles</span>, Mt. 13:14; 2Tim. 2:10; 1Ped. 5:10.', delay: 50},
+    {text: '<span class="command">En el infierno o lugar de castigo para los incrédulos</span>, Sal. 9:17; Mt. 13:50; 25:46; Lc. 16:23; Apo. 20:10.', delay: 50},
+    {text: '<span class="command">En la Biblia, como la verdad eterna, como la santa Palabra de D-s</span>, Sal. 119:89; Jn. 5:39; 20:31; 1Ped. 1:25.', delay: 50},
+    {text: '<span class="command">En la Santa Comunión o Cena del Sür, para conmemorar la muerte del Sür, no su resurrección</span>, Jn. 6:48-58; 1Cor. 11:23-32.', delay: 50},
+    {text: '<span class="command">En el Lavamiento de Pies, como señal de humildad</span>, Lc. 7:44; Jn. 13:2-9.', delay: 50},
+    {text: '<span class="command">Que la ley de salubridad bíblica debe ser observada por los hijos de D-s</span>.', delay: 50},
+    {text: '<span class="command">Que hay alimentos limpios e inmundos</span>, Gén. 7:2; Lev 11; Deut. 14:2-3; Hech. 10:14.', delay: 50},
+    ];
+
+        let currentLine = 0;
+        let currentChar = 0;
+        let timeoutId;
+
+        function typeWriter() {
+            if (currentLine >= verses.length) {
+                return;
+            }
+            const verse = verses[currentLine];
+            if (currentChar === 0) {
+                const verseElement = document.createElement('p');
+                verseElement.className = 'line';
+                content.appendChild(verseElement);
+            }
+            const lines = content.getElementsByClassName('line');
+            const currentVerseElement = lines[lines.length - 1];
+            if (currentChar < verse.text.length) {
+                currentVerseElement.innerHTML = verse.text.substring(0, currentChar + 1);
+                currentChar++;
+                timeoutId = setTimeout(typeWriter, 10);
+            } else {
+                currentLine++;
+                currentChar = 0;
+                timeoutId = setTimeout(typeWriter, verse.delay);
+            }
+            content.scrollTop = content.scrollHeight;
+        }
+
+        window.onload = function() {
+            typeWriter();
+        };
+
+        document.addEventListener('keydown', function() {
+            clearTimeout(timeoutId);
+            content.innerHTML = '';
+            currentLine = 0;
+            currentChar = 0;
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
