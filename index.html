@@ -1,48 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-BYMJS3X12P');
-  </script>
-  <meta name="google-site-verification" content="KWZFlVdcT-h9cB1Qnj0LgSLJP-J-NS4bgjhnQG_c140" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYMJS3X12P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BYMJS3X12P');
+    </script>
+    <meta name="google-site-verification" content="KWZFlVdcT-h9cB1Qnj0LgSLJP-J-NS4bgjhnQG_c140" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo saber que es la iglesia verdadera</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+    <title>Cómo saber que es la iglesia verdadera - IN GOD WE TRUST</title>
+    <link rel="icon" type="image/jpeg" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMnK9YNHAeUqJMg3Ik0uXISwxlt3eeAc0uIj6Mr4SD-HPdRSNGWGv4wD-Bu9s19ejScpwxcYVX9SJ5ZfX-JbXlrRLvYrR-pqVvZMNIeK6zRaUlJzBbl-1VdJb-yg8bIAymQ9isL-YirKPYAA6FyN_s_1KfeZlNd7i-cj8VkW7_XRiSZuqlPcpd26GcBAs/s200/IMG-20250113-WA0002.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-    body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Monaco', monospace;
-            font-size: 14px;
+        :root {
+            --color-primary: #3a5e30;
+            --color-secondary: #8b5a2b;
+            --color-accent: #d4af37;
+            --color-light: #f8f4e9;
+            --color-dark: #1e1e1e;
+            --color-background: #0f1a0d;
+            --color-terminal-bg: #0a1209;
+            --color-terminal-border: #3a5e30;
+            --color-terminal-text: #d4af37;
+            --color-terminal-command: #8b5a2b;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--color-background);
+            color: var(--color-light);
+            line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a1209"/><path d="M0 0L100 100" stroke="%231a2716" stroke-width="1"/><path d="M100 0L0 100" stroke="%231a2716" stroke-width="1"/></svg>');
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .logo:hover img {
+            border-color: var(--color-light);
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: var(--color-light);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main Content */
+        .page-title {
+            text-align: center;
+            margin: 30px 0 20px;
+            color: var(--color-accent);
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: var(--color-accent);
+        }
+
+        .page-subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Terminal Styles */
+        .terminal-container {
+            background: linear-gradient(135deg, rgba(58, 94, 48, 0.2) 0%, rgba(30, 30, 30, 0.7) 100%);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-bottom: 40px;
         }
 
         #terminal {
-            width: 80%;
-            height: 600px;
-            margin: 40px auto;
+            width: 100%;
+            height: 500px;
+            background-color: var(--color-terminal-bg);
+            border: 2px solid var(--color-terminal-border);
+            border-radius: 8px;
             padding: 20px;
-            border: 1px solid #333;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: var(--color-terminal-text);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .command {
-            color: #0f0;
+            color: var(--color-terminal-command);
+            font-weight: bold;
         }
 
-        .output {
-            color: #fff;
+        .verse {
+            color: var(--color-terminal-text);
+            margin-left: 20px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .line {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 2px solid var(--color-terminal-border);
         }
 
         .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background-color: var(--color-terminal-text);
             animation: blink 1s infinite;
+            vertical-align: middle;
         }
 
         @keyframes blink {
@@ -53,44 +227,210 @@
                 opacity: 0;
             }
         }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--color-terminal-border);
+        }
+
+        .terminal-title {
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .terminal-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .control-close { background-color: #ff5f56; }
+        .control-minimize { background-color: #ffbd2e; }
+        .control-maximize { background-color: #27c93f; }
+
+        /* Instructions */
+        .instructions {
+            text-align: center;
+            margin-top: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark) 100%);
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 2px solid var(--color-accent);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            #terminal {
+                height: 400px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #terminal {
+                height: 350px;
+                padding: 15px;
+                font-size: 12px;
+            }
+
+            .terminal-container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="terminal">
-        <div id="content"></div>
-    </div>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMnK9YNHAeUqJMg3Ik0uXISwxlt3eeAc0uIj6Mr4SD-HPdRSNGWGv4wD-Bu9s19ejScpwxcYVX9SJ5ZfX-JbXlrRLvYrR-pqVvZMNIeK6zRaUlJzBbl-1VdJb-yg8bIAymQ9isL-YirKPYAA6FyN_s_1KfeZlNd7i-cj8VkW7_XRiSZuqlPcpd26GcBAs/s200/IMG-20250113-WA0002.jpg" alt="Logo IN GOD WE TRUST">
+                
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="page-title">CÓMO SABER QUE ES LA IGLESIA VERDADERA</h2>
+        <p class="page-subtitle">Lo que toda iglesia cristiana debe creer según las Escrituras</p>
+
+       
+
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-title">iglesia-verdadera.</div>
+                <div class="terminal-controls">
+                    <div class="terminal-control control-close"></div>
+                    <div class="terminal-control control-minimize"></div>
+                    <div class="terminal-control control-maximize"></div>
+                </div>
+            </div>
+
+            <div id="terminal">
+                <div id="content"></div>
+                <div class="cursor" id="cursor"></div>
+            </div>
+
+            <p class="instructions">Presiona cualquier tecla para reiniciar la animación</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMnK9YNHAeUqJMg3Ik0uXISwxlt3eeAc0uIj6Mr4SD-HPdRSNGWGv4wD-Bu9s19ejScpwxcYVX9SJ5ZfX-JbXlrRLvYrR-pqVvZMNIeK6zRaUlJzBbl-1VdJb-yg8bIAymQ9isL-YirKPYAA6FyN_s_1KfeZlNd7i-cj8VkW7_XRiSZuqlPcpd26GcBAs/s200/IMG-20250113-WA0002.jpg" alt="Logo">
+                    
+                </a>
+                <p>Buscando la verdad según las Sagradas Escrituras</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 IN GOD WE TRUST. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         const content = document.getElementById('content');
-        
-const verses = [
-    {text: '<span class="title">LO QUE TODA IGLESIA CRISTIANA DEBE DE CREER</span>', delay: 100},
-    {text: '<span class="command">En el llamamiento directo del creyente para dedicarse por entero a la causa de Dios</span>, Mt. 19:21; Luc. 9:59-62; 14:26-27.', delay: 50},
-    {text: '<span class="command">En la renunciación completa a los bienes materiales para servir al Señor</span>, 1Rey. 19:20-21; Mt. 4:18-22; Lc. 14:33; Hech. 4:34-35.', delay: 50},
-    {text: '<span class="command">En el bautismo por inmersión, como primer paso para la salvación</span>, Mt. 3:5-6,16; 28:19; Mr. 16:16.', delay: 50},
-    {text: '<span class="command">En la observancia de los mandamientos de Dios, de Jesucristo el Hijo, y del Espíritu Santo</span>, Mt. 5:18-19; 28:20; Mt. 19:16,20; Gál. 3:21; Ex. 20:1-17.', delay: 50},
-    {text: '<span class="command">Que el santo Sábado, séptimo día, es el día de reposo, bendecido por Dios</span>, Gén. 2:3; Mr. 2:27-28; Heb. 4:4,9; Ex. 20:10.', delay: 50},
-    {text: '<span class="command">En la resurrección de los muertos cuando Cristo aparezca en gloria</span>, Mr. 12:24-25; Dan. 12:2; Jn. 11:24-25.', delay: 50},
-    {text: '<span class="command">Que los ministros deben practicar la vida por fe</span>, Jn. 6:27; Heb. 10:38, 39; Rom. 1:17.', delay: 50},
-    {text: '<span class="command">En la Trinidad, Dios el Padre, Dios el Hijo, y Dios el Espíritu Santo, iguales en divina perfección</span>, Mt. 28:19; Hech. 5:3; 2Cor. 13:13; 1Jn. 5:7.', delay: 50},
-    {text: '<span class="command">Que Cristo es el Salvador del hombre, y por ningún otro medio hay vida</span>, Jn. 10:28-29; Hech. 4:12, 20, 28; 1Tim 2:5.', delay: 50},
-    {text: '<span class="command">Que somos salvados por gracia y por la fe</span>, Hech. 15:11; Rom. 4:16; Ef. 2:5, 8.', delay: 50},
-    {text: '<span class="command">Que el ayuno y la oración son factores para fortalecer al creyente</span>, Esther 4:16; Jonas 3:7-8; Mt. 9:15; 17:21.', delay: 50},
-    {text: '<span class="command">En la santidad, que es libertad del pecado</span>. Los ministros de Cristo tienen que practicarla, según mandato del Apóstol Pablo, Lc. 1:75; Rom. 6:19, 22; 12:1; Ef. 4:24; 1Tes. 3:13; Apo. 22:11.', delay: 50},
-    {text: '<span class="command">En la segunda venida de Cristo, que será personal, que descenderá en las nubes de gloria y que nadie sabe el día ni la hora</span>, Mt. 25:31; 1Tes. 4:16-17; 2Ped. 3:10.', delay: 50},
-    {text: '<span class="command">En la sanidad divina, por medio de la oración y la unción</span>, Mr. 6:13; Mt. 10:8; Stgo. 5:14-15.', delay: 50},
-    
-    {text: '<span class="command">Que el ministro no debe mezclarse en política</span>, 2Tim. 2:14; 1Ped. 4:15; Jn. 18:36.', delay: 50},
-    {text: '<span class="command">En el mensaje universal, proclamado por la iglesia del Señor</span>, Mr. 16:15; Mt. 14:14; 10:7.', delay: 50},
-    {text: '<span class="command">Que todos los hombres son iguales, con las mismas responsabilidades y los mismos privilegios ante Dios</span>, Gál. 3:28; Hech. 2:39; 10:34-35; 17:26.', delay: 50},
-    {text: '<span class="command">En el bautismo del Espíritu Santo y fuego</span>, Mt. 3:11; Lc. 11:13; Hech. 2:38.', delay: 50},
-    {text: '<span class="command">En la profecía y la revelación divina, por medio de sueños o visiones y manifestaciones del Espíritu Santo</span>, Num. 12:6; Job 33:14-15; Joel 2:28; Mt. 2:12; Hech. 8:26; 10:3; 16:9; 2Ped. 1:21.', delay: 50},
-    {text: '<span class="command">En la gloria o vida eterna para los fieles</span>, Mt. 13:14; 2Tim. 2:10; 1Ped. 5:10.', delay: 50},
-    {text: '<span class="command">En el infierno o lugar de castigo para los incrédulos</span>, Sal. 9:17; Mt. 13:50; 25:46; Lc. 16:23; Apo. 20:10.', delay: 50},
-    {text: '<span class="command">En la Biblia, como la verdad eterna, como la santa Palabra de Dios</span>, Sal. 119:89; Jn. 5:39; 20:31; 1Ped. 1:25.', delay: 50},
-    {text: '<span class="command">En la Santa Comunión o Cena del Señor para conmemorar la muerte del Señor, no su resurrección</span>, Jn. 6:48-58; 1Cor. 11:23-32.', delay: 50},
-    {text: '<span class="command">En el Lavamiento de Pies, como señal de humildad</span>, Lc. 7:44; Jn. 13:2-9.', delay: 50},
-    {text: '<span class="command">Que la ley de salubridad bíblica debe ser observada por los hijos de Dios, que hay alimentos limpios e inmundos</span>, Gén. 7:2; Lev 11; Deut. 14:2-3; Hech. 10:14.', delay: 50},
-    ];
+        const cursor = document.getElementById('cursor');
+
+        const verses = [
+            {text: '<span class="title">LO QUE TODA IGLESIA CRISTIANA DEBE DE CREER</span>', delay: 100},
+            {text: '<span class="command">En el llamamiento directo del creyente para dedicarse por entero a la causa de Dios</span><span class="verse">, Mt. 19:21; Luc. 9:59-62; 14:26-27.</span>', delay: 50},
+            {text: '<span class="command">En la renunciación completa a los bienes materiales para servir al Señor</span><span class="verse">, 1Rey. 19:20-21; Mt. 4:18-22; Lc. 14:33; Hech. 4:34-35.</span>', delay: 50},
+            {text: '<span class="command">En el bautismo por inmersión, como primer paso para la salvación</span><span class="verse">, Mt. 3:5-6,16; 28:19; Mr. 16:16.</span>', delay: 50},
+            {text: '<span class="command">En la observancia de los mandamientos de Dios, de Jesucristo el Hijo, y del Espíritu Santo</span><span class="verse">, Mt. 5:18-19; 28:20; Mt. 19:16,20; Gál. 3:21; Ex. 20:1-17.</span>', delay: 50},
+            {text: '<span class="command">Que el santo Sábado, séptimo día, es el día de reposo, bendecido por Dios</span><span class="verse">, Gén. 2:3; Mr. 2:27-28; Heb. 4:4,9; Ex. 20:10.</span>', delay: 50},
+            {text: '<span class="command">En la resurrección de los muertos cuando Cristo aparezca en gloria</span><span class="verse">, Mr. 12:24-25; Dan. 12:2; Jn. 11:24-25.</span>', delay: 50},
+            {text: '<span class="command">Que los ministros deben practicar la vida por fe</span><span class="verse">, Jn. 6:27; Heb. 10:38, 39; Rom. 1:17.</span>', delay: 50},
+            {text: '<span class="command">En la Trinidad, Dios el Padre, Dios el Hijo, y Dios el Espíritu Santo, iguales en divina perfección</span><span class="verse">, Mt. 28:19; Hech. 5:3; 2Cor. 13:13; 1Jn. 5:7.</span>', delay: 50},
+            {text: '<span class="command">Que Cristo es el Salvador del hombre, y por ningún otro medio hay vida</span><span class="verse">, Jn. 10:28-29; Hech. 4:12, 20, 28; 1Tim 2:5.</span>', delay: 50},
+            {text: '<span class="command">Que somos salvados por gracia y por la fe</span><span class="verse">, Hech. 15:11; Rom. 4:16; Ef. 2:5, 8.</span>', delay: 50},
+            {text: '<span class="command">Que el ayuno y la oración son factores para fortalecer al creyente</span><span class="verse">, Esther 4:16; Jonas 3:7-8; Mt. 9:15; 17:21.</span>', delay: 50},
+            {text: '<span class="command">En la santidad, que es libertad del pecado. Los ministros de Cristo tienen que practicarla, según mandato del Apóstol Pablo</span><span class="verse">, Lc. 1:75; Rom. 6:19, 22; 12:1; Ef. 4:24; 1Tes. 3:13; Apo. 22:11.</span>', delay: 50},
+            {text: '<span class="command">En la segunda venida de Cristo, que será personal, que descenderá en las nubes de gloria y que nadie sabe el día ni la hora</span><span class="verse">, Mt. 25:31; 1Tes. 4:16-17; 2Ped. 3:10.</span>', delay: 50},
+            {text: '<span class="command">En la sanidad divina, por medio de la oración y la unción</span><span class="verse">, Mr. 6:13; Mt. 10:8; Stgo. 5:14-15.</span>', delay: 50},
+            {text: '<span class="command">Que el ministro no debe mezclarse en política</span><span class="verse">, 2Tim. 2:14; 1Ped. 4:15; Jn. 18:36.</span>', delay: 50},
+            {text: '<span class="command">En el mensaje universal, proclamado por la iglesia del Señor</span><span class="verse">, Mr. 16:15; Mt. 14:14; 10:7.</span>', delay: 50},
+            {text: '<span class="command">Que todos los hombres son iguales, con las mismas responsabilidades y los mismos privilegios ante Dios</span><span class="verse">, Gál. 3:28; Hech. 2:39; 10:34-35; 17:26.</span>', delay: 50},
+            {text: '<span class="command">En el bautismo del Espíritu Santo y fuego</span><span class="verse">, Mt. 3:11; Lc. 11:13; Hech. 2:38.</span>', delay: 50},
+            {text: '<span class="command">En la profecía y la revelación divina, por medio de sueños o visiones y manifestaciones del Espíritu Santo</span><span class="verse">, Num. 12:6; Job 33:14-15; Joel 2:28; Mt. 2:12; Hech. 8:26; 10:3; 16:9; 2Ped. 1:21.</span>', delay: 50},
+            {text: '<span class="command">En la gloria o vida eterna para los fieles</span><span class="verse">, Mt. 13:14; 2Tim. 2:10; 1Ped. 5:10.</span>', delay: 50},
+            {text: '<span class="command">En el infierno o lugar de castigo para los incrédulos</span><span class="verse">, Sal. 9:17; Mt. 13:50; 25:46; Lc. 16:23; Apo. 20:10.</span>', delay: 50},
+            {text: '<span class="command">En la Biblia, como la verdad eterna, como la santa Palabra de Dios</span><span class="verse">, Sal. 119:89; Jn. 5:39; 20:31; 1Ped. 1:25.</span>', delay: 50},
+            {text: '<span class="command">En la Santa Comunión o Cena del Señor para conmemorar la muerte del Señor, no su resurrección</span><span class="verse">, Jn. 6:48-58; 1Cor. 11:23-32.</span>', delay: 50},
+            {text: '<span class="command">En el Lavamiento de Pies, como señal de humild</span><span class="verse">, Lc. 7:44; Jn. 13:2-9.</span>', delay: 50},
+            {text: '<span class="command">Que la ley de salubridad bíblica debe ser observada por los hijos de Dios, que hay alimentos limpios e inmundos</span><span class="verse">, Gén. 7:2; Lev 11; Deut. 14:2-3; Hech. 10:14.</span>', delay: 50},
+        ];
 
         let currentLine = 0;
         let currentChar = 0;
@@ -98,16 +438,21 @@ const verses = [
 
         function typeWriter() {
             if (currentLine >= verses.length) {
+                cursor.style.display = 'none';
                 return;
             }
+
             const verse = verses[currentLine];
+
             if (currentChar === 0) {
-                const verseElement = document.createElement('p');
+                const verseElement = document.createElement('div');
                 verseElement.className = 'line';
                 content.appendChild(verseElement);
             }
+
             const lines = content.getElementsByClassName('line');
             const currentVerseElement = lines[lines.length - 1];
+
             if (currentChar < verse.text.length) {
                 currentVerseElement.innerHTML = verse.text.substring(0, currentChar + 1);
                 currentChar++;
@@ -117,20 +462,25 @@ const verses = [
                 currentChar = 0;
                 timeoutId = setTimeout(typeWriter, verse.delay);
             }
+
             content.scrollTop = content.scrollHeight;
+        }
+
+        function restartAnimation() {
+            clearTimeout(timeoutId);
+            content.innerHTML = '';
+            cursor.style.display = 'inline-block';
+            currentLine = 0;
+            currentChar = 0;
+            typeWriter();
         }
 
         window.onload = function() {
             typeWriter();
         };
 
-        document.addEventListener('keydown', function() {
-            clearTimeout(timeoutId);
-            content.innerHTML = '';
-            currentLine = 0;
-            currentChar = 0;
-            typeWriter();
-        });
+        document.addEventListener('keydown', restartAnimation);
+        document.getElementById('terminal').addEventListener('click', restartAnimation);
     </script>
 </body>
 </html>
